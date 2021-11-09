@@ -1,16 +1,12 @@
-import { StyledInput } from "./style";
-
-const Input = ({ type, placeholder, showpassword }) => {
-  const showpass = showpassword;
-  if (showpass === true) {
+const Input = ({ type, showpassword, className, register }) => {
+  // const { register } = useFormLocal();
+  if (showpassword === true) {
     type = "text";
   }
   return (
-    <StyledInput
-      type={type}
-      placeholder={placeholder}
-      showpassword={showpassword}
-    />
+    <>
+      <input className={className} type={type} {...register} />
+    </>
   );
 };
 
